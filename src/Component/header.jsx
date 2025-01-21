@@ -3,7 +3,7 @@ import React from 'react';
 const header = () => {
     return (
         <div>
-            I am header
+            I am the header.
         </div>
     );
 };
