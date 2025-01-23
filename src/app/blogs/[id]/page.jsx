@@ -1,51 +1,20 @@
-import Link from 'next/link'
-import React from 'react'
+import React from 'react';
 
-export default function page() {
+const page = ({ params }) => {
+    const { title, description } = blogs.find((blog) => blog.id == params.id)
     return (
-        <div>
-            <div className="carousel w-full static">
-                <div id="item1" className="carousel-item w-full">
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
-                        className="w-full" />
+        <div className='p-20'>
+            <div className="card bg-base-200 w-96 shadow-xl mx-auto">
+                <div className="card-body">
+                    <h2 className="card-title text-pink-400">{title}</h2>
+                    <p>{description}</p>
                 </div>
-                <div id="item2" className="carousel-item w-full">
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
-                        className="w-full" />
-                </div>
-                <div id="item3" className="carousel-item w-full">
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
-                        className="w-full" />
-                </div>
-                <div id="item4" className="carousel-item w-full">
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
-                        className="w-full" />
-                </div>
-            </div>
-            <div className="flex w-full justify-center gap-2 py-2">
-                <a href="#item1" className="btn btn-xs">1</a>
-                <a href="#item2" className="btn btn-xs">2</a>
-                <a href="#item3" className="btn btn-xs">3</a>
-                <a href="#item4" className="btn btn-xs">4</a>
-            </div>
-            <div className='p-12'>
-                {
-                    blogs.map((blog) => <div key={blog.id} className='border-2 my-4 p-8 rounded'>
-                        <h3 className='text-xl font-semibold text-red-400'><span className='text-black'>{blog.id}. </span>{blog.title}</h3>
-                        <p>{blog.description}</p>
-                        <button className='bg-red-400 py-2 px-4 rounded mt-2'>
-                            <Link href={`/blogs/${blog.id}`}>View Details</Link>
-                        </button>
-                    </div>)
-                }
             </div>
         </div>
-    )
-}
+    );
+};
+
+export default page;
 
 const blogs = [
     {
@@ -99,4 +68,3 @@ const blogs = [
         "description": "Explore the latest trends and technologies shaping the future of web development in 2025 and beyond."
     }
 ]
-

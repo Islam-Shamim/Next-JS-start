@@ -8,7 +8,7 @@ export default function Navber() {
   const links = [
     {
       title : "Home",
-      path : "/about"
+      path : "/"
     },
     {
       title : "Blogs",
@@ -23,7 +23,7 @@ export default function Navber() {
     router.push("/signIn")
   }
   return (
-    <div  class='sticky top-0 bg-yellow-300 flex justify-between items-center p-4'>
+    <div  className='sticky top-0 bg-yellow-300 flex justify-between items-center p-4'>
       <h1 className='text-4xl font-semibold'>Next <span className='text-red-500'>Hero</span> </h1>
       <ul className='flex justify-between items-center space-x-6 text-xl font-semibold rounded'>
         {
