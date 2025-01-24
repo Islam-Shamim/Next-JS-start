@@ -22,6 +22,10 @@ export default function Navber() {
   const handler = () =>{
     router.push("/signIn")
   }
+  if (pathName.includes("/home"))
+    return (
+      <div className='bg-slate-500 text-pink-500 text-center p-4'>Welcome to our Website</div>
+    )
   return (
     <div  className='sticky top-0 bg-yellow-300 flex justify-between items-center p-4'>
       <h1 className='text-4xl font-semibold'>Next <span className='text-red-500'>Hero</span> </h1>
