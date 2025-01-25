@@ -6,7 +6,7 @@ export const middleware = (request) => {
     // if (request.nextUrl.pathname.startsWith('/about')) {
     //     return NextResponse.rewrite(new URL("/blogs", request.url)) //same as redirect by it can't show hosting path  
     // }
-    const cookies = request.cookies.get('token')
+    const cookies = request.cookies.get('token') // create cookies => go to inspect -> application -> cookies
     if (!cookies) {
         return NextResponse.redirect(new URL('/signIn', request.url))
     }
