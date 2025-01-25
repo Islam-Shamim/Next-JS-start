@@ -4,9 +4,9 @@ const page = ({ params }) => {
     const { title, description } = blogs.find((blog) => blog.id == params.id)
     return (
         <div className='p-20'>
-            <div className="card bg-base-200 w-96 shadow-xl mx-auto">
+            <div className="card bg-cyan-200 w-96 shadow-xl mx-auto">
                 <div className="card-body">
-                    <h2 className="card-title text-pink-400">{title}</h2>
+                    <h2 className="card-title text-red-400">{title}</h2>
                     <p>{description}</p>
                 </div>
             </div>

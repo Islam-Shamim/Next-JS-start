@@ -11,6 +11,10 @@ export default function Navber() {
       path : "/"
     },
     {
+      title : "About",
+      path : "/about"
+    },
+    {
       title : "Blogs",
       path : "/blogs"
     },
@@ -22,9 +26,12 @@ export default function Navber() {
   const handler = () =>{
     router.push("/signIn")
   }
-  if (pathName.includes("/home"))
+  if (pathName.includes("/about"))
     return (
-      <div className='bg-slate-500 text-pink-500 text-center p-4'>Welcome to our Website</div>
+      <div className='flex justify-between items-center bg-slate-500 text-pink-500 text-2xl font-semibold'>
+        <div className='text-4xl text-center p-4'>Welcome to <span className='text-cyan-200'>our Website</span></div>
+        <button className='bg-red-500 p-2 text-white rounded'><Link className='mr-2' href="/home">Home</Link></button>
+      </div>
     )
   return (
     <div  className='sticky top-0 bg-yellow-300 flex justify-between items-center p-4'>
