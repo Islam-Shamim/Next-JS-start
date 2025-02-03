@@ -2,20 +2,19 @@ import { notFound } from 'next/navigation';
 import React from 'react';
 
 const page = ({ params }) => {
-    const { title, description } = blogs.find((blog) => blog.id == params.id)
+    //console.log(params)
+    const {title, description } = blogs.find((blog) => blog.id == params.id)
+    if (params.id === "1") {
+        notFound()
+    }
     return (
         <div className='p-20'>
-            if(id===1){
-                notFound()
-            }
-            else{
-                <div className="card bg-cyan-200 w-96 shadow-xl mx-auto">
+            <div className="card bg-cyan-200 w-96 shadow-xl mx-auto">
                 <div className="card-body">
                     <h2 className="card-title text-red-400">{title}</h2>
                     <p>{description}</p>
                 </div>
             </div>
-            }
         </div>
     );
 };
