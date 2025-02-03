@@ -5,7 +5,7 @@ const page = ({ params }) => {
     //console.log(params)
     const {title, description } = blogs.find((blog) => blog.id == params.id)
     if (params.id === "1") {
-        notFound()
+        notFound();
     }
     return (
         <div className='p-20'>
