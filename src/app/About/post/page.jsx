@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default async function postPage() {
     const posts = await  getAllPost();
-    console.log(posts);
+    //console.log(posts);
   return (
     <div>
         <h2 className='text-center bg-cyan-300 p-4 my-4 text-4xl font-bold font-serif text-slate-500'>See All Post</h2>
@@ -16,7 +16,6 @@ export default async function postPage() {
                 </div>
             ))}
         </div>
-
     </div>
   )
 }
